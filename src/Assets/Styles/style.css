@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    background: #383838;
+    color: #f2f2f2;
+}
+
+main {
+    max-width: 800px;
+    margin: 50px auto;
+    background: #066163;
+    border-radius: 10px;
+}
+
+.budget-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    padding: 50px;
+}
+
+.budget__inner-box {
+    background: #069A8E;
+    padding: 15px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.main-budget-box {
+    display: grid;
+    grid-template-columns: 1fr 20px;
+    place-items: center;
+    gap: 5px;
+}
+
+.box-title {
+    font-size: 1.1rem;
+}
+
+.icon-wrapper {
+    width: 16px;
+    height: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.icon-wrapper .icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    vertical-align: top;
+}
+
+#budget-edit__textarea {
+    background: transparent;
+    border: none;
+    height: 100%;
+    width: 100%;
+    resize: none;
+    color: #f2f2f2;
+    font-size: 1.1rem;
+    font-family: 'Oswald', sans-serif;
+}
+
+#budget-edit__textarea::placeholder {
+    color: #f2f2f2;
+}
+
+#budget-edit__textarea:focus {
+    outline: none;
+    border: none;
+}
