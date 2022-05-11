@@ -15,7 +15,7 @@ export default function ExpenseWrapper(props) {
         cost={props.cost}
         date={props.date}
       />
-      <ExpenseList data={props.data}/>
+      <ExpenseList data={props.data} />
     </div>
   );
 }

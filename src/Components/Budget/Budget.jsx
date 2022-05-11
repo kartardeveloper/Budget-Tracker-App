@@ -1,20 +1,32 @@
 import React from "react";
+import { store } from "../../Store";
+import { useSelector } from "react-redux";
+
+import { myTotalBudget, isBudgetEditing } from "../Actions/MainActions";
+import { initialState } from "../Reducers/Reducers";
 
 import Edit from "../../Assets/Images/edit.png";
 
-export default function Budget(props) {
+export default function Budget() {
+  const mainState = useSelector((state) => state);
+
   return (
     <div className="budget__inner-box">
-      {!props.budgetIsEditingField ? (
+      {!mainState.myTotalBudgetReducer.isEditing ? (
         <div className="budget-title-box main-budget-box">
           <p className="box-title">
             Budget :{" "}
-            <span className="total-budget">{props.mainTotalBudget}</span>Rs.
+            <span className="total-budget">
+              {mainState.myTotalBudgetReducer.total}
+            </span>
+            Rs.
           </p>
           <button
             type="button"
             className="icon-wrapper"
-            onClick={props.onBudgetIsEditing}
+            onClick={() =>
+              store.dispatch(isBudgetEditing(initialState.mainBudget))
+            }
           >
             <img src={Edit} alt="Edit" className="icon" />
           </button>
@@ -25,7 +37,9 @@ export default function Budget(props) {
           name="budget-edit__textarea"
           id="budget-edit__textarea"
           placeholder="Enter your budget"
-          onKeyUp={props.addBudget}
+          onKeyUp={(e) =>
+            store.dispatch(myTotalBudget(e, initialState.mainBudget))
+          }
         ></input>
       )}
     </div>
