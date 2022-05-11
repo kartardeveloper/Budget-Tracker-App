@@ -39,6 +39,7 @@ button:focus {
 
 main {
   max-width: 800px;
+  width: 90%;
   margin: 50px auto;
 }
 
@@ -195,11 +196,62 @@ main {
 }
 
 .expense-item .expense-title {
-    justify-self: start;
+  justify-self: start;
 }
 
 .expense-cost__wrapper {
-    padding: 12px 15px;
+  padding: 12px 15px;
+  background: #069a8e;
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 576px) {
+  .budget-wrapper {
+    gap: 20px;
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+  .expense-form__wrapper {
+    padding: 20px;
+  }
+  .expense-form {
+    gap: 20px 40px;
+    grid-template-columns: 1fr;
+  }
+  .expense-buttons__wrapper #add-expense-btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .expense-list {
+    padding: 20px 20px 10px;
+  }
+  .expense-item {
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    margin: 25px 0 20px;
+    padding: 15px;
+    place-items: center;
+  }
+  .expense-item .expense-title {
+    grid-column: 1/-1;
+    grid-row: 1/2;
     background: #069a8e;
     border-radius: 4px;
+    width: 100%;
+    padding: 10px;
+  }
+  .expense-item .expense-item__date-wrapper {
+    padding: 5px;
+    width: 100%;
+  }
+  .expense-cost__wrapper {
+    font-size: 1.3rem;
+    padding: 5px;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
